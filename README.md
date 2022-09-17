@@ -30,13 +30,14 @@ Learn how to effectively programm an Advanced Microprocessor.
 
 VERSION or DATE: SPRING 2021
 
-The project report was originally written by me in Greek and was translated by me so there may be some mistakes in the traslated version :)
+The project report and the comments in my code were originally written by me in Greek and were translated by me so there may be some mistakes in the traslated 
+version (grammar) :)
 
 USER INSTRUCTIONS:
 
 You can easily run my codes using Microchip Studio (or Atmel® Studio 7), you can also run them with any C,C++ IDE but Atmel is reccomended so you 
 can debug and see the results live.
-The project report and the comments in my code were originally written by me in Greek and were translated by me so there may be some mistakes in the traslated version (grammar) :)
+
 
 Thank you for your time!
 

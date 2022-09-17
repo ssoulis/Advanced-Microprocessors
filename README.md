@@ -26,7 +26,7 @@ of Studio.
 
 PURPOSE OF PROJECT:
 
-Learn how to effectively program an Advanced Microprocessor.
+Learn how to effectively program Advanced Microprocessors.
 
 VERSION or DATE: SPRING 2021
 

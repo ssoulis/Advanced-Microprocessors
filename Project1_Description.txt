@@ -1,0 +1,44 @@
+Description
+
+The purpose of this laboratory exercise is to simulate the operation of a smart
+of a household appliance moving in the space of an empty room. It starts from one corner of it
+room and its purpose is to draw its outline. As it moves through space it will
+takes values ​​from a sensor that measures the distance of the device from an obstacle
+in front of it (here the sensor values ​​will be measured by the ADC). If the price is below it
+allowed (you set any value between 1-254) the device should stop
+and move left. The device will choose to move right if the right sensor is pointing to us
+that there is no wall to the right of the device (it will also be simulated with the ADC), i.e. the value
+it is above the permissible. When it reaches the corner it started from we want it to stop.
+We also want if a switch is pressed to be able to return to its position following it
+path he has taken until now but in reverse.
+
+
+Some assumptions that will be used are the following:
+
+• Movement will be simulated by an LED (when moving straight the LED is on otherwise
+closes).
+• There is only one ADC available on the board, so to use it in
+two different states (checking if it is approaching a wall and checking if it exists
+wall right) you must use for the one situation the free-running mode and
+on the other hand, only one conversion should be performed when requested (i.e. there is no need for
+second state to be constantly checked).
+• Left and right movement will be simulated with two different LEDs which are
+lit until a timer reaches a certain value (put values ​​that are convenient for you
+and explain how you found the values).
+• When a switch is pressed the reverse course will be activated.
+
+Regarding the reverse course, we want the device to turn 180 degrees. This will
+simulated with the three LEDs being simultaneously open for a period of time (using a timer).
+It will then perform the exact same process in reverse. Specifically, as it progresses
+forward and finds a wall, we want it to turn right (the corresponding LED is on). When he realizes that
+there is no wall to the left, we want it to move to the left (the corresponding LED is on). Finally, when
+realizes that it has returned to its original position, terminates.
+
+1) Implement the home appliance movement code when the room is
+square (therefore no need for the right sensor and its second function
+ADC).
+2) Implement the motion code in the room shown in the figure below
+2.2, the second function of the ADC is also introduced here.
+3) Implement the reverse operation.
+
+

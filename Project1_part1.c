@@ -20,7 +20,7 @@ int main()
 	PORTD.OUTCLR |=  PIN1_bm ; //LED1 IS ON
 
 
-	// LET for left-hand traffic
+	// LET for left turn
 
 	PORTD.DIR |=  PIN2_bm ; // PIN2 is output
 	PORTD.OUT |= PIN2_bm; // LED2 is off

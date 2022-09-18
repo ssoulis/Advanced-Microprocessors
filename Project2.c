@@ -185,7 +185,7 @@ int main()
 
 		}
 
-	// kleinoyme ledaki gia stripsimo
+	// we close leds for turning
 
 		PORTD.OUT |= PIN2_bm; // LED2 is off
 	}

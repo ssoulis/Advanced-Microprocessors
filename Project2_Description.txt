@@ -1,0 +1,45 @@
+Description
+
+In this laboratory exercise, the domestic simulation is further implemented
+device moving in space. Specifically, the movement of its two wheels will be simulated, when
+turns right and left, which will move according to two different rhythms, which will
+determined by two different PWM generators (use whatever registers you
+facilitate). The rate of each wheel will be displayed on an LED which will be triggered when
+the pulse will be on the rising edge and will be turned off when
+the rising edge of the next pulse follows, (as shown in detail and
+in figure 3.2). LED0 (PORTD PIN0) will correspond to the right wheel and LED1 (PORTD PIN1) to the
+left wheel.
+In the initial state the two LEDw (the two pulses), blink at the same rate as
+the device moves straight, so its two wheels move in parallel. In the same way as
+and in Lab 2, the home appliance has a sensor in front of it, which
+gives values ​​to ADC. When it approaches a wall, ie the ADC displays a value less than one
+random value set, the device should stop moving (stop the
+PWMs) and wait for the next command to be given to it. This process will be simulated
+with a third LED (PORTD PIN2), which will be the only one on until another is given
+mandate.
+Two options will be implemented when the device stops. First, the choice to go
+right and second the option to go left. The two options will be simulated respectively with
+pressing a switch (when SW5 (PORTF PIN5) is pressed will go right and when SW6 is pressed
+(PORTF PIN6) will go left). Depending on which button has been pressed, her wheels must
+device to move respectively:
+When the corresponding switch is pressed again, the turning process will stop
+and the device will return to its original mode, (the two LEDs will flash with
+the same rate).
+Note: As both switches are on the same PORT (PORTF), they should
+check through PORTF.INTFLAGS to see which button (flag) was activated. Specifically,
+you should isolate bit 5 and bit 6 of PORTF.INTFLAGS (via appropriate
+masking) and check with an if if the corresponding bit is ΄1΄ (so the button was pressed).
+
+Lab Questions 
+
+1) You implement the original function of the device (i.e. the movement straight with the two LEDs
+to flash simultaneously according to the proper programming of the two
+PWM pulses).
+2) Add ADC to your function, which when it will show a value less than
+a threshold will stop the operation and turn on a third LED (LED2).
+3) Add the operation of the two switches. Specifically, when the
+SW5 (PORTF PIN5) will enable clockwise rotation and when SW6 (PORTF
+PIN6) left rotation will be enabled.
+4) Implement right and left rotation by programming two pulses appropriately
+PWM. One of them must each time be twice the other and respectively with
+the movement being performed, the appropriate LEDs will flash.

@@ -1,0 +1,51 @@
+Description
+
+In this lab exercise, a smart alarm system is implemented, which
+offers safety in the area where it operates. The alarm consists of four elements,
+which serve different functions:
+1) A distance calculation sensor, which is an input to the ADC.
+2) A timer element.
+3) Two switches, which act as a keypad to enter the code
+deactivation.
+4) A PWM pulse that activates the alarm siren
+
+The alarm consists of two functions, the trigger function and the function
+deactivation. The first function is called in order to trigger the alarm and to
+secure the space. Specifically, when someone enters through the keyboard (two switches
+of PORTF) the predefined four-digit combination, the enable function is called.
+This four-digit combination is a sequential activation of the two switches SW5 and
+SW6 of PORTF with a predetermined sequence.The combination consists first of all
+turning on switch SW6, then switch SW5, again switch SW5 and finally
+of switch SW6. Once the combination is entered correctly, a timer (can
+to be simulated with whatever timer/counter suits you) which gives a time interval to
+occupants to leave the room, locks the doors and activates the second one
+alarm function.
+
+The second function, shutdown function, is called when detected through the
+distance sensor that someone has entered the guarded space. Specifically, when
+the value of the ADC falls below a threshold, an LED (LED0) is activated and then o
+alarm requires the correct entry of the entire predefined four-digit number
+combination (the sequence SW6-SW5-SW5-SW6) within a limited time.
+Therefore, the ADC starts a timer that runs for a period of time in which
+the code must be entered with a margin of error up to three times.If within the timeline
+margin enter the correct combination with less than three attempts, then the alarm
+is disabled and its first function is called (waiting for the input of the combination for
+to be activated again). If the time period expires without entering the correct combination or if
+an attempt has been made to enter the wrong combination three times, the siren is activated. THE
+siren will be simulated by driving the LED (LED0) via a PWM pulse. On the rise
+rising edge of the pulse the LED will also be activated on the falling edgeof the corresponding pulse will be disabled. To stop the siren and to
+disable the alarm (start its first operation) the correct one must be entered
+combination. Finally, note that when a mistake is made in entering the combination to
+any stage, the alarm will require the entire combination to be entered again from
+the beginning (SW6-SW5-SW5-SW6).
+
+Lab Questions 
+
+1) Implement the first function of the alarm function, that is, the system
+waiting for the correct combination to be entered as well as the activation and
+turn off the timer.
+2) Add the second function of the alarm, i.e. enable the ADC,
+of LED0, the timer, and the correct combination entry check in three attempts
+within the time limit set by the timer.
+3) Implement the siren ie set a PWM pulse to trigger and
+turning off LED0.
